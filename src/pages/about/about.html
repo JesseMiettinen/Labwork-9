@@ -1,0 +1,41 @@
+<!-- Jesse Miettinen 1601555 -->
+<!-- For a truely functional app I should have implemented local storage or something similar to save the data input from user -->
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Treat List
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content style="background-color: #1F4F7C">
+    <ion-list style="background-color: #1F4F7C">
+    <ion-item style="background-color: #1F4F7C">
+        <ion-input  [(ngModel)]="todo" placeholder="Type a treat here" type="text"></ion-input>
+    </ion-item>
+
+    <button ion-button full (click)="add()">ADD A TREAT</button>
+
+    <!-- Allows user to reorder items-->
+        <ion-item-group reorder="true" (ionItemReorder)="reordertodos($event)">
+            <ion-item-sliding *ngFor="let todo of todos">
+    
+            <ion-item>{{ todo }}</ion-item>
+            <ion-item-options side="right">
+              <!-- Deletes items -->
+                <button ion-button color="danger" (click)="delete(todo)">
+                    <ion-icon name="trash"></ion-icon> Delete
+                </button>
+            </ion-item-options>
+
+
+            
+            
+ 
+
+          </ion-item-sliding>
+          </ion-item-group>
+
+        
+    </ion-list>
+</ion-content>

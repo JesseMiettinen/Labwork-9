@@ -1,0 +1,47 @@
+<!-- Jesse Miettinen 1601555 -->
+
+<ion-content class="bg-image no-scroll" padding>
+
+  
+<!-- Image courtesy of pixabay, public domain image. https://pixabay.com/fi/lahja-antaa-henkil%C3%B6-luovuus-2960891/-->
+  <img src="assets/imgs/g1.png" class="logo">
+
+
+    <div><ion-list  class="list" inset>
+      <ion-item class="label">
+      <ion-label color="myWhite"   style="font-size:12px" stacked >Email Address</ion-label>
+    
+      <ion-input  type="text" [(ngModel)]="user.email"></ion-input>
+      
+    </ion-item>
+    <ion-item class="label">
+      <ion-label color="myWhite" style="font-size:12px" stacked>Password</ion-label>
+    
+      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+     
+    </ion-item>
+  </ion-list>
+  </div>
+
+<p class="text" style="font-family:open-sans; font-size:14px; color: #ebebeb">Forgot your password?</p>
+
+
+<div text-center>
+    <button class="btnWidth" ion-button color="secondary" round (click)="login(user)">Login</button>
+  </div>
+  
+  <div text-center>
+    <button class="btnWidth" ion-button color="primary" round (click)="register()">Sign Up</button>
+  </div>
+
+  <!-- Back up button for teacher, meant to be used if you have problems with the registration again. You can skip straight to app with this. -->
+  <div text-center>
+      <button class="btnWidth" ion-button color="danger" round (click)="altlogin()">If registration fails</button>
+    </div>
+
+<!-- These buttons are just for show, for the time being at least. Saved: [navPush]="nextPage"-->
+ <img src="assets/imgs/facebook.png"  class="fb-button">
+
+<img src="assets/imgs/twitter.png"  class="twitter-button">
+
+</ion-content>
